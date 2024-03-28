@@ -105,3 +105,51 @@ console.log("1 1 1 1 1\n2 1 2 4 8 \n3 1 3 9 27\n4 1 4 6 64\n5 1 5 25 125");
 
 console.log("Slice because * 3: ", word.substr(31, 23));
 console.log("Slice because * 3: ", word.substring(31, 54));
+
+//exercise 3
+let countLove =
+  "Love is the best thing in this world. Some found their love and some are still looking for their love.";
+const regex = /love/gi;
+console.log("Love Count: ", countLove.match(regex).length);
+
+let becauseCount =
+  "You cannot end a sentence with because because because is a conjunction";
+const regexCuz = /because/gi;
+console.log("Because Count: ", becauseCount.match(regexCuz).length);
+
+//AI
+const sentence =
+  "%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching";
+const cleanedWords = sentence
+  .replace(/[%$@&;#]/g, "")
+  .split(/\s+/)
+  .filter((word) => word.length > 0);
+
+// Count word occurrences
+const wordCount = {};
+cleanedWords.forEach((word) => {
+  wordCount[word] = (wordCount[word] || 0) + 1;
+});
+
+// Find the most repeated words
+const sortedWords = Object.entries(wordCount).sort((a, b) => b[1] - a[1]);
+const mostRepeatedWords = sortedWords.slice(0, 5).map((entry) => entry[0]);
+
+mostRepeatedWords;
+
+console.log("Cleaned Words: ", cleanedWords);
+console.log("sortedWords: ", sortedWords);
+console.log("mostRepeatedWords: ", mostRepeatedWords);
+
+const regexClean = /[%$@&;#!]/g;
+console.log("Clean Sentence: ", sentence.replace(regexClean, ""));
+
+let extractNumber =
+  "He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.";
+const regexNumber = /\d+/g;
+const totalNumber = extractNumber.match(regexNumber);
+console.log(
+  "Extract and add Annual Salary: ",
+  Number(totalNumber[0]) + Number(totalNumber[1]) + Number(totalNumber[2])
+);
+
