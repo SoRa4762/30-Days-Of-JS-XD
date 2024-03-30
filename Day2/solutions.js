@@ -152,4 +152,3 @@ console.log(
   "Extract and add Annual Salary: ",
   Number(totalNumber[0]) + Number(totalNumber[1]) + Number(totalNumber[2])
 );
-

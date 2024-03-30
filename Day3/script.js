@@ -53,3 +53,17 @@ const hours = prompt("Enter your hours per week: ");
 const pay = prompt("Enter your rete of pay: ");
 const totalPayPerWeek = hours * pay;
 console.log("Your total pay per week is: ", totalPayPerWeek);
+
+//age comparision
+let yourAge = 21;
+let myAge = 14;
+
+const ageGap = myAge - yourAge;
+
+if (ageGap > 0) {
+  console.log("I am " + ageGap + " years older than you");
+} else if (ageGap < 0) {
+  console.log("I am " + (ageGap - ageGap * 2) + " years younger than you");
+} else {
+  console.log("You and I are of same age!");
+}
