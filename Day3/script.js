@@ -67,3 +67,7 @@ if (ageGap > 0) {
 } else {
   console.log("You and I are of same age!");
 }
+
+//slope y = mx+c
+// const y =
+// const slope = y/x+c;
